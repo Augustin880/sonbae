@@ -1,0 +1,132 @@
+[
+  {
+    "path": "/basics/operations-systems",
+    "title": "Opérations et systèmes",
+    "summary": "Routines opérationnelles, accès systèmes et liens utiles pour le travail quotidien.",
+    "lastUpdated": "2026-04-13",
+    "guidelines": [
+      {
+        "title": "Utiliser le guichet opérations pour les demandes",
+        "description": "Les changements de salle, remplacements, calendriers et événements passent par le circuit standard sauf urgence en classe."
+      },
+      {
+        "title": "Conserver les données élèves dans les systèmes approuvés",
+        "description": "Les évaluations, présences et communications familles restent dans les systèmes approuvés, pas dans des documents personnels."
+      },
+      {
+        "title": "Escalader directement les urgences",
+        "description": "La protection, les risques matériels sérieux et les perturbations en classe doivent être signalés au relais nommé avant documentation."
+      }
+    ],
+    "links": [
+      {
+        "label": "Formulaire opérations",
+        "href": "https://example.com/sonbae/operations-request",
+        "description": "Envoyer une demande de salle, remplacement, événement ou document."
+      },
+      {
+        "label": "Guide d’accès systèmes",
+        "href": "https://example.com/sonbae/systems-access",
+        "description": "Demander un compte, réinitialiser un accès et vérifier les outils approuvés."
+      },
+      {
+        "label": "Tableau de réservation des salles",
+        "href": "https://example.com/sonbae/room-booking",
+        "description": "Vérifier les salles spécialisées et espaces partagés."
+      }
+    ]
+  },
+  {
+    "path": "/basics/numbers-kpis",
+    "title": "Chiffres et KPI",
+    "summary": "Indicateurs de démonstration pour présence, évaluations et réactivité du support.",
+    "lastUpdated": "2026-04-13",
+    "guidelines": [
+      {
+        "title": "Lire les KPI comme indicateurs de tendance",
+        "description": "Les valeurs de la démo sont fictives. Une version dynamique pourra connecter présence, évaluations et tickets."
+      }
+    ],
+    "links": [
+      {
+        "label": "KPI definitions",
+        "href": "https://example.com/sonbae/kpi-definitions",
+        "description": "Definitions for source systems, reporting windows, thresholds, and review owners."
+      }
+    ],
+    "kpis": [
+      {
+        "label": "Suivi des présences",
+        "value": "92%",
+        "trend": "+4 pts",
+        "description": "Cas de présence signalés revus sous deux jours scolaires."
+      },
+      {
+        "label": "Complétion des évaluations",
+        "value": "87%",
+        "trend": "-2 pts",
+        "description": "Évaluations communes saisies avant l’échéance."
+      },
+      {
+        "label": "Réponse opérations",
+        "value": "1.6 days",
+        "trend": "stable",
+        "description": "Délai médian de première réponse aux demandes internes."
+      },
+      {
+        "label": "Complétion des formations",
+        "value": "78%",
+        "trend": "+11 pts",
+        "description": "Formations obligatoires complétées pour le cycle en cours."
+      }
+    ]
+  },
+  {
+    "path": "/basics/calculator",
+    "title": "Calculateur",
+    "summary": "Estimer les revenus mensuels du club à partir des membres, de la cotisation et du taux de présence.",
+    "lastUpdated": "2026-04-13",
+    "guidelines": [
+      {
+        "title": "Utiliser ces estimations uniquement pour planifier",
+        "description": "Le calculateur est une aide simple. Les chiffres financiers doivent venir des systèmes vérifiés."
+      }
+    ],
+    "links": [
+      {
+        "label": "Hypothèses de planification",
+        "href": "https://example.com/sonbae/planning-assumptions",
+        "description": "Baseline assumptions used for staffing, groups, and revenue estimates."
+      }
+    ],
+    "calculator": {
+      "currency": "EUR",
+      "fields": {
+        "memberCount": {
+          "label": "Members",
+          "helper": "Nombre total de membres inscrits pour le mois.",
+          "defaultValue": 180,
+          "min": 0,
+          "max": 2000,
+          "step": 1
+        },
+        "monthlyFee": {
+          "label": "Cotisation mensuelle",
+          "helper": "Cotisation moyenne payée par membre.",
+          "defaultValue": 45,
+          "min": 0,
+          "max": 500,
+          "step": 5
+        },
+        "attendanceRatePercent": {
+          "label": "Taux de présence",
+          "helper": "Part attendue de membres présents ou actifs.",
+          "defaultValue": 82,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      }
+    }
+  }
+]

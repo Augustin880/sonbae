@@ -1,0 +1,134 @@
+[
+  {
+    "id": "learning-quality-charter",
+    "title": "Charte de qualité pédagogique",
+    "category": "charter",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/charters-labels"],
+    "owner": "Conseil pédagogique",
+    "updatedAt": "2026-04-02",
+    "href": "/documents/placeholders/learning-quality-charter.pdf",
+    "summary": "Engagements communs pour la planification, l’enseignement, l’évaluation, le feedback et la collaboration pédagogique."
+  },
+  {
+    "id": "inclusion-charter",
+    "title": "Charte d’inclusion",
+    "category": "charter",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/charters-labels"],
+    "owner": "Support élèves",
+    "updatedAt": "2026-03-30",
+    "href": "/documents/placeholders/inclusion-charter.pdf",
+    "summary": "Attentes pour la différenciation, les plans de soutien, les aménagements et les transmissions confidentielles."
+  },
+  {
+    "id": "digital-safety-label",
+    "title": "Label sécurité numérique",
+    "category": "label",
+    "linkType": "external",
+    "sectionPaths": ["/understand/charters-labels"],
+    "owner": "Systèmes opérationnels",
+    "updatedAt": "2026-03-27",
+    "href": "https://example.com/sonbae/digital-safety-label",
+    "summary": "Critères d’approbation des logiciels de classe, du traitement des données élèves et des outils numériques."
+  },
+  {
+    "id": "approved-resource-labels",
+    "title": "Labels des ressources approuvées",
+    "category": "label",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/charters-labels"],
+    "owner": "Opérations scolaires",
+    "updatedAt": "2026-03-18",
+    "href": "/documents/placeholders/approved-resource-labels.pdf",
+    "summary": "Définitions des labels approuvé, en révision, brouillon et retiré utilisés dans l’intranet."
+  },
+  {
+    "id": "staff-code-of-conduct",
+    "title": "Code de conduite du personnel",
+    "category": "legal",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/institutional-legal-docs"],
+    "owner": "Principal's Office",
+    "updatedAt": "2026-03-25",
+    "href": "/documents/placeholders/staff-code-of-conduct.pdf",
+    "summary": "Conduite professionnelle, limites, confidentialité, obligations de signalement et responsabilités du personnel."
+  },
+  {
+    "id": "data-protection-notice",
+    "title": "Notice de protection des données",
+    "category": "legal",
+    "linkType": "external",
+    "sectionPaths": ["/understand/institutional-legal-docs"],
+    "owner": "Systèmes opérationnels",
+    "updatedAt": "2026-03-21",
+    "href": "https://example.com/sonbae/data-protection-notice",
+    "summary": "Règles pour les dossiers élèves, les données d’évaluation, les communications aux familles, la conservation et les demandes d’accès."
+  },
+  {
+    "id": "safeguarding-policy",
+    "title": "Politique de protection",
+    "category": "policy",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/institutional-legal-docs"],
+    "owner": "Support élèves",
+    "updatedAt": "2026-04-01",
+    "href": "/documents/placeholders/safeguarding-policy.pdf",
+    "summary": "Procédures obligatoires pour consigner, signaler et escalader les préoccupations de sécurité des élèves."
+  },
+  {
+    "id": "institutional-registration-record",
+    "title": "Fiche d’enregistrement institutionnel",
+    "category": "institutional",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/understand/institutional-legal-docs"],
+    "owner": "Principal's Office",
+    "updatedAt": "2026-02-26",
+    "href": "/documents/placeholders/institutional-registration-record.pdf",
+    "summary": "Fiche de référence pour l’identité institutionnelle, les enregistrements de gouvernance et les informations officielles."
+  },
+  {
+    "id": "assessment-policy",
+    "title": "Politique d’évaluation",
+    "category": "policy",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/documents", "/understand/institutional-legal-docs"],
+    "owner": "Conseil pédagogique",
+    "updatedAt": "2026-03-22",
+    "href": "/documents/placeholders/assessment-policy.pdf",
+    "summary": "Attentes clés pour la notation, le feedback, la réévaluation et le reporting."
+  },
+  {
+    "id": "field-trip-template",
+    "title": "Modèle de sortie pédagogique",
+    "category": "template",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/documents"],
+    "owner": "Opérations scolaires",
+    "updatedAt": "2026-02-14",
+    "href": "/documents/placeholders/field-trip-template.pdf",
+    "summary": "Calendrier, analyse des risques, communication aux familles et checklist d’approbation."
+  },
+  {
+    "id": "safeguarding-guide",
+    "title": "Guide rapide de protection",
+    "category": "guide",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/documents", "/understand/institutional-legal-docs"],
+    "owner": "Wellbeing",
+    "updatedAt": "2026-04-01",
+    "href": "/documents/placeholders/safeguarding-guide.pdf",
+    "summary": "Étapes immédiates pour consigner, signaler et escalader une préoccupation."
+  },
+  {
+    "id": "term-calendar",
+    "title": "Calendrier du trimestre",
+    "category": "calendar",
+    "linkType": "pdf-placeholder",
+    "sectionPaths": ["/documents"],
+    "owner": "Opérations scolaires",
+    "updatedAt": "2026-03-05",
+    "href": "/documents/placeholders/term-calendar.pdf",
+    "summary": "Périodes d’évaluation, échéances de reporting, événements et journées d’équipe."
+  }
+]

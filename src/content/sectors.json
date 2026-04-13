@@ -1,0 +1,20 @@
+[
+  {
+    "id": "learning",
+    "name": "Learning",
+    "summary": "Programme, pratiques de classe, évaluation et progression des élèves.",
+    "departmentIds": ["humanities", "stem"]
+  },
+  {
+    "id": "student-support",
+    "name": "Support élèves",
+    "summary": "Bien-être, protection, inclusion et lien avec les familles.",
+    "departmentIds": ["wellbeing"]
+  },
+  {
+    "id": "operations",
+    "name": "Opérations",
+    "summary": "Horaires, règles, accueil et coordination globale.",
+    "departmentIds": ["operations"]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "principal",
+    "label": "Eun Seo",
+    "role": "Principal",
+    "reportsTo": null
+  },
+  {
+    "id": "learning-director",
+    "label": "Harper Singh",
+    "role": "Director of Learning",
+    "reportsTo": "principal"
+  },
+  {
+    "id": "student-support-director",
+    "label": "Mateo Silva",
+    "role": "Directeur du support élèves",
+    "reportsTo": "principal"
+  },
+  {
+    "id": "operations-director",
+    "label": "Grace Han",
+    "role": "Directrice des opérations",
+    "reportsTo": "principal"
+  }
+]

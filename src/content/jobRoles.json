@@ -1,0 +1,76 @@
+[
+  {
+    "id": "humanities-teacher",
+    "departmentId": "humanities",
+    "title": "Humanités Teacher",
+    "level": "teacher",
+    "summary": "Plans and teaches humanities courses with shared assessment expectations.",
+    "responsibilities": [
+      "Plan aligned units",
+      "Give common feedback cycles",
+      "Document family contact"
+    ],
+    "tools": ["Canvas", "Turnitin", "Library catalogue"]
+  },
+  {
+    "id": "stem-teacher",
+    "departmentId": "stem",
+    "title": "STEM Teacher",
+    "level": "teacher",
+    "summary": "Teaches mathematics, science, or design courses with safe practical routines.",
+    "responsibilities": [
+      "Maintain lab norms",
+      "Use shared problem banks",
+      "Track intervention groups"
+    ],
+    "tools": ["Desmos", "Vernier", "Robotics kits"]
+  },
+  {
+    "id": "department-lead",
+    "departmentId": "operations",
+    "title": "Responsable de département",
+    "level": "lead",
+    "summary": "Coordinates curriculum quality, teacher support, and department operations.",
+    "responsibilities": ["Run team meetings", "Approve shared documents", "Coach new teachers"],
+    "tools": ["Shared drive", "Intranet admin", "Observation tracker"]
+  },
+  {
+    "id": "wellbeing-coordinator",
+    "departmentId": "wellbeing",
+    "title": "Wellbeing Coordinator",
+    "level": "coordinator",
+    "summary": "Coordinates student support referrals and safeguarding follow-up.",
+    "responsibilities": [
+      "Review support requests",
+      "Coordinate case meetings",
+      "Maintain confidentiality"
+    ],
+    "tools": ["Safeguarding log", "Referral board", "Attendance dashboard"]
+  },
+  {
+    "id": "advisor",
+    "departmentId": "wellbeing",
+    "title": "Advisor",
+    "level": "teacher",
+    "summary": "Guides advisory groups and monitors student wellbeing signals.",
+    "responsibilities": [
+      "Animer les blocs d’accompagnement",
+      "Faire le point avec les familles",
+      "Escalader les préoccupations"
+    ],
+    "tools": ["Advisory slides", "Family notes", "Attendance dashboard"]
+  },
+  {
+    "id": "operations-admin",
+    "departmentId": "operations",
+    "title": "Opérations Administrator",
+    "level": "admin",
+    "summary": "Maintains internal processes, schedules, and staff-facing operations resources.",
+    "responsibilities": [
+      "Publish calendar updates",
+      "Manage room bookings",
+      "Maintain staff handbooks"
+    ],
+    "tools": ["Calendrier", "Guichet logistique", "Bibliothèque documentaire"]
+  }
+]

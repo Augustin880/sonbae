@@ -1,0 +1,547 @@
+[
+  {
+    "path": "/understand/presentation",
+    "title": "Présentation du club",
+    "summary": "Sonbae is organised around high-trust teaching, transparent operations, and shared responsibility for student progress.",
+    "lastUpdated": "2026-04-08",
+    "blocks": [
+      {
+        "heading": "Mission",
+        "body": "The club supports teachers with practical information, clear decision paths, and reliable operational routines. The intranet is the single entry point for staff who need to understand how the organisation works.",
+        "bullets": [
+          "Student progress first",
+          "Common operating language",
+          "Fast access to owners and documents"
+        ]
+      },
+      {
+        "heading": "Teaching culture",
+        "body": "L’équipe applique des standards communs tout en conservant son jugement professionnel. Les responsables de département coordonnent la cohérence de la planification, de l’évaluation et de la communication aux familles."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Parcours d’accueil équipe",
+        "description": "A concise guide to teams, tools, routines, and first-month expectations.",
+        "owner": "Opérations scolaires",
+        "type": "document"
+      },
+      {
+        "title": "Teacher handbook",
+        "description": "Reference handbook for classroom routines, communication norms, and professional standards.",
+        "owner": "Conseil pédagogique",
+        "type": "document"
+      }
+    ]
+  },
+  {
+    "path": "/understand/structure",
+    "title": "Structure",
+    "summary": "The organisation is grouped into learning, student support, and operations, with clear handoffs between department leads and service owners.",
+    "lastUpdated": "2026-04-06",
+    "blocks": [
+      {
+        "heading": "Operating lines",
+        "body": "Learning teams own curriculum delivery, student support owns safeguarding and wellbeing coordination, and operations owns the systems that keep the school day running.",
+        "bullets": [
+          "Learning: curriculum, assessment, classroom practice",
+          "Support élèves: wellbeing, inclusion, safeguarding",
+          "Opérations: calendars, rooms, substitutions, staff services"
+        ]
+      },
+      {
+        "heading": "Escalation",
+        "body": "Teachers start with their department lead for instructional questions and use functional relays for cross-team blockers."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Organisation chart",
+        "description": "Current leadership and reporting structure.",
+        "owner": "Principal's Office",
+        "type": "document"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Grace Han",
+        "responsibility": "Opérations structure and room ownership",
+        "email": "grace.han@sonbae.example"
+      },
+      {
+        "name": "Harper Singh",
+        "responsibility": "Learning team structure",
+        "email": "harper.singh@sonbae.example"
+      }
+    ]
+  },
+  {
+    "path": "/understand/roles-deployment",
+    "title": "Rôles et déploiement",
+    "summary": "Le déploiement des rôles aligne expertise, horaires, besoins des élèves et priorités des départements.",
+    "lastUpdated": "2026-03-29",
+    "blocks": [
+      {
+        "heading": "Deployment principles",
+        "body": "Deployment decisions balance continuity for students with development opportunities for teachers. Changes are discussed with department leads before timetable publication.",
+        "bullets": [
+          "Protect exam-year continuity",
+          "Match specialist expertise to course needs",
+          "Publish changes with a clear rationale"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Guide des familles de rôles",
+        "description": "Vue d’ensemble des responsabilités enseignant, responsable, coordinateur et administrateur.",
+        "owner": "Équipe et opérations",
+        "type": "document"
+      },
+      {
+        "title": "Timetable deployment checklist",
+        "description": "Checks completed before role deployment is confirmed.",
+        "owner": "Opérations scolaires",
+        "type": "process"
+      }
+    ]
+  },
+  {
+    "path": "/understand/charters-labels",
+    "title": "Charters & Labels",
+    "summary": "Les chartes définissent les engagements liés à la qualité pédagogique, l’inclusion, la sécurité et la collaboration.",
+    "lastUpdated": "2026-04-02",
+    "blocks": [
+      {
+        "heading": "Quality labels",
+        "body": "Labels help staff identify approved, reviewed, and draft resources. Published materials must have an owner, review date, and clear scope.",
+        "bullets": [
+          "Approved: ready for staff use",
+          "Under review: active update in progress",
+          "Draft: local team material only"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Charte de qualité pédagogique",
+        "description": "Shared commitments for planning, instruction, assessment, and feedback.",
+        "owner": "Conseil pédagogique",
+        "type": "policy"
+      },
+      {
+        "title": "Charte d’inclusion",
+        "description": "Expectations for differentiation, access plans, and student support handoffs.",
+        "owner": "Support élèves",
+        "type": "policy"
+      },
+      {
+        "title": "Label sécurité numérique",
+        "description": "Approval requirements for classroom software and digital student data use.",
+        "owner": "Systèmes opérationnels",
+        "type": "policy"
+      }
+    ]
+  },
+  {
+    "path": "/understand/governance-responsibilities",
+    "title": "Governance & Responsibilities",
+    "summary": "Governance clarifies who decides, who advises, who executes, and who must be informed.",
+    "lastUpdated": "2026-04-09",
+    "blocks": [
+      {
+        "heading": "Decision model",
+        "body": "La plupart des décisions sont prises au niveau responsable le plus proche. Les responsables traitent les sujets pédagogiques courants, la direction arbitre les sujets transversaux et valide les changements institutionnels.",
+        "bullets": [
+          "Instructional routines: department lead",
+          "Student risk: wellbeing coordinator and director",
+          "Policy changes: principal and directors"
+        ]
+      },
+      {
+        "heading": "Responsibilities",
+        "body": "Chaque processus majeur dispose d’un responsable, d’un relais et d’un chemin d’escalade. Les responsables maintiennent la documentation et le rythme de revue."
+      }
+    ],
+    "resources": [
+      {
+        "title": "RACI matrix",
+        "description": "Decision rights for curriculum, student support, operations, events, and communications.",
+        "owner": "Principal's Office",
+        "type": "document"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Eun Seo",
+        "responsibility": "Institutional approval and executive escalation",
+        "email": "eun.seo@sonbae.example"
+      },
+      {
+        "name": "Mateo Silva",
+        "responsibility": "Safeguarding, wellbeing, and risk escalation",
+        "email": "mateo.silva@sonbae.example"
+      },
+      {
+        "name": "Grace Han",
+        "responsibility": "Operational policy and systems escalation",
+        "email": "grace.han@sonbae.example"
+      }
+    ]
+  },
+  {
+    "path": "/understand/institutional-legal-docs",
+    "title": "Institutional & Legal Docs",
+    "summary": "Reference point for legal, institutional, and compliance documents used by staff and leadership.",
+    "lastUpdated": "2026-03-25",
+    "blocks": [
+      {
+        "heading": "Document handling",
+        "body": "Les documents institutionnels ne doivent pas être dupliqués localement. L’équipe doit utiliser la source approuvée et demander les mises à jour via les opérations."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Code de conduite de l’équipe",
+        "description": "Professional conduct, boundaries, confidentiality, and reporting obligations.",
+        "owner": "Principal's Office",
+        "type": "policy"
+      },
+      {
+        "title": "Data protection notice",
+        "description": "Rules for handling student records, assessment data, and family communications.",
+        "owner": "Systèmes opérationnels",
+        "type": "document"
+      },
+      {
+        "title": "Safeguarding policy",
+        "description": "Mandatory procedures for recording and escalating student safety concerns.",
+        "owner": "Support élèves",
+        "type": "policy"
+      }
+    ]
+  },
+  {
+    "path": "/understand/optional-annex",
+    "title": "6.1 Optional Annex",
+    "summary": "Reserved annex for future governance notes, board extracts, or exceptional operating guidance.",
+    "lastUpdated": "2026-02-18",
+    "blocks": [
+      {
+        "heading": "Annex scope",
+        "body": "This area stays separate from core governance so experimental or exceptional guidance can be reviewed before becoming policy."
+      }
+    ],
+    "resources": []
+  },
+  {
+    "path": "/functional-relays",
+    "title": "Relais fonctionnels",
+    "summary": "Les relais fonctionnels sont les personnes et canaux qui fluidifient le travail entre équipes.",
+    "lastUpdated": "2026-04-07",
+    "blocks": [
+      {
+        "heading": "How relays work",
+        "body": "Use relays for cross-functional blockers that cannot be solved inside a department meeting or normal ticket flow.",
+        "bullets": [
+          "Use the relay owner for urgent cross-team blockers",
+          "Keep department leads copied on instructional impacts",
+          "Record decisions in the relevant process page"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Relay directory",
+        "description": "Current owners for systems, events, safeguarding, facilities, and communications.",
+        "owner": "Opérations scolaires",
+        "type": "contact"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Noah Chen",
+        "responsibility": "Daily operations relay",
+        "email": "noah.chen@sonbae.example"
+      },
+      {
+        "name": "Sofia Mendes",
+        "responsibility": "Wellbeing relay",
+        "email": "sofia.mendes@sonbae.example"
+      }
+    ]
+  },
+  {
+    "path": "/processes-evolutions",
+    "title": "Processus et évolutions",
+    "summary": "Les changements de processus sont suivis de la proposition au test, puis à l’approbation, au déploiement et à la revue.",
+    "lastUpdated": "2026-04-10",
+    "blocks": [
+      {
+        "heading": "Onboarding",
+        "body": "New staff follow a staged onboarding path covering identity, systems access, safeguarding basics, department routines, and first-month check-ins.",
+        "bullets": ["Création des comptes", "Briefing d’accueil", "Binôme de département"]
+      },
+      {
+        "heading": "Training",
+        "body": "Training cycles keep staff aligned on classroom practice, systems, policies, and student support procedures.",
+        "bullets": ["Rappels obligatoires", "Ateliers par rôle", "Preuves consignées"]
+      },
+      {
+        "heading": "Certification",
+        "body": "Certification confirms that staff have completed required training and can operate independently within their responsibilities.",
+        "bullets": ["Contrôles de complétion", "Validation responsable", "Confirmation des accès"]
+      },
+      {
+        "heading": "Deployment",
+        "body": "Deployment assigns people, tools, spaces, and responsibilities after readiness checks are complete.",
+        "bullets": ["Timetable alignment", "System permissions", "Communication plan"]
+      },
+      {
+        "heading": "Evaluation",
+        "body": "Evaluation captures what worked, what needs adjustment, and which process owner should act next.",
+        "bullets": ["Retour équipe", "KPI review", "Notes de risque"]
+      },
+      {
+        "heading": "Evolution",
+        "body": "Approved improvements are published into the intranet and monitored through the next operating cycle.",
+        "bullets": ["Mise à jour de version", "Annonce à l’équipe", "Date de revue"]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Demande de changement de processus",
+        "description": "Template for describing the issue, proposed change, impact, and review date.",
+        "owner": "Systèmes opérationnels",
+        "type": "process"
+      }
+    ],
+    "timeline": [
+      {
+        "label": "Onboarding",
+        "status": "completed",
+        "description": "Les nouveaux membres et responsables reçoivent les accès de base, les supports et un contact nommé."
+      },
+      {
+        "label": "Training",
+        "status": "completed",
+        "description": "Required training is scheduled, completed, and logged against the staff member or process owner."
+      },
+      {
+        "label": "Certification",
+        "status": "active",
+        "description": "Les responsables valident la préparation avant autonomie ou déploiement élargi."
+      },
+      {
+        "label": "Deployment",
+        "status": "planned",
+        "description": "Responsibilities, systems access, rooms, and communications are put into operation."
+      },
+      {
+        "label": "Evaluation",
+        "status": "planned",
+        "description": "Les responsables analysent preuves, incidents, retours équipe et indicateurs de service."
+      },
+      {
+        "label": "Evolution",
+        "status": "planned",
+        "description": "The improved process is versioned, published, announced, and assigned a new review date."
+      }
+    ]
+  },
+  {
+    "path": "/basics/operations-systems",
+    "title": "Opérations et systèmes",
+    "summary": "Core systems and routines for rooms, substitutions, devices, accounts, and daily operations.",
+    "lastUpdated": "2026-03-31",
+    "blocks": [
+      {
+        "heading": "Daily operations",
+        "body": "Submit time-sensitive requests through the operations desk. For classroom disruption, contact the daily operations relay before filing a routine ticket.",
+        "bullets": [
+          "Room changes by 14:00 the previous day",
+          "Substitution requests as soon as absence is known",
+          "Device issues through systems support"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Guide d’accès systèmes",
+        "description": "How staff request, recover, and close access to school systems.",
+        "owner": "Systèmes opérationnels",
+        "type": "system"
+      },
+      {
+        "title": "Room booking rules",
+        "description": "Shared rules for specialist rooms, event spaces, and ad hoc reservations.",
+        "owner": "Opérations scolaires",
+        "type": "process"
+      }
+    ]
+  },
+  {
+    "path": "/basics/numbers-kpis",
+    "title": "Chiffres et KPI",
+    "summary": "KPI placeholders for attendance, assessment completion, response times, and operational service levels.",
+    "lastUpdated": "2026-04-04",
+    "blocks": [
+      {
+        "heading": "KPI use",
+        "body": "The demo tracks placeholder indicators only. A dynamic app can connect these cards to analytics, attendance, assessment, and ticketing data."
+      }
+    ],
+    "resources": [
+      {
+        "title": "KPI definitions",
+        "description": "Common definitions for reporting windows, thresholds, and source systems.",
+        "owner": "Principal's Office",
+        "type": "metric"
+      }
+    ],
+    "kpis": [
+      {
+        "title": "Suivi des présences",
+        "description": "Percentage of flagged attendance cases reviewed within two school days.",
+        "owner": "Support élèves",
+        "type": "metric"
+      },
+      {
+        "title": "Complétion des évaluations",
+        "description": "Share of common assessments entered before the reporting cutoff.",
+        "owner": "Conseil pédagogique",
+        "type": "metric"
+      },
+      {
+        "title": "Réponse opérations",
+        "description": "Median response time for staff operations requests.",
+        "owner": "Opérations scolaires",
+        "type": "metric"
+      }
+    ]
+  },
+  {
+    "path": "/basics/calculator",
+    "title": "Calculateur",
+    "summary": "Planning calculator placeholder for staffing, groups, event load, and operational estimates.",
+    "lastUpdated": "2026-03-28",
+    "blocks": [
+      {
+        "heading": "Calculateur scope",
+        "body": "This page reserves space for future formulas and API-driven assumptions. For the static demo, it documents the expected input categories.",
+        "bullets": ["Group size", "Staffing coverage", "Room capacity", "Event supervision"]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Hypothèses de planification",
+        "description": "Baseline ratios and assumptions used in staffing and event planning estimates.",
+        "owner": "Opérations scolaires",
+        "type": "metric"
+      }
+    ]
+  },
+  {
+    "path": "/news",
+    "title": "Actualités",
+    "summary": "Current announcements for staff, including policy updates, events, and operations reminders.",
+    "lastUpdated": "2026-04-11",
+    "blocks": [
+      {
+        "heading": "This week",
+        "body": "Department leads should confirm assessment calendar changes by Friday. Opérations will publish the revised event supervision rota after confirmations are complete."
+      },
+      {
+        "heading": "Staff reminder",
+        "body": "The safeguarding refresher closes on April 24, 2026. Completion is required for all staff with student-facing responsibilities."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Weekly staff bulletin",
+        "description": "Compiled announcements, deadlines, and upcoming internal events.",
+        "owner": "Principal's Office",
+        "type": "document"
+      }
+    ]
+  },
+  {
+    "path": "/calendar",
+    "title": "Calendrier",
+    "summary": "Key staff dates for department meetings, assessment windows, reporting deadlines, and school events.",
+    "lastUpdated": "2026-04-05",
+    "blocks": [
+      {
+        "heading": "Upcoming rhythm",
+        "body": "The calendar is arranged around assessment windows, student support review cycles, and staff briefing dates.",
+        "bullets": [
+          "Mondays: leadership briefing",
+          "Wednesdays: department collaboration",
+          "Fridays: operations updates"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Term 3 calendar",
+        "description": "Assessment windows, events, deadlines, and staff professional learning days.",
+        "owner": "Opérations scolaires",
+        "type": "document"
+      }
+    ],
+    "timeline": [
+      {
+        "label": "Assessment calibration",
+        "status": "active",
+        "description": "Departments complete common rubric checks."
+      },
+      {
+        "label": "Family conferences",
+        "status": "planned",
+        "description": "Advisors prepare notes and support requests."
+      }
+    ]
+  },
+  {
+    "path": "/contacts-support",
+    "title": "Contacts / support",
+    "summary": "Find the right owner for operational help, student support escalation, systems issues, and governance questions.",
+    "lastUpdated": "2026-04-12",
+    "blocks": [
+      {
+        "heading": "Niveaux de support",
+        "body": "Use the fastest direct route for urgent student safety or classroom disruption. Routine requests should go through the named owner or service queue.",
+        "bullets": [
+          "Urgent student safety: wellbeing coordinator",
+          "Classroom disruption: daily operations relay",
+          "Account access: systems support"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "title": "Formulaire de support",
+        "description": "Standard route for non-urgent operations, systems, and document requests.",
+        "owner": "Opérations scolaires",
+        "type": "contact"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Noah Chen",
+        "responsibility": "Facilities, rooms, and substitutions",
+        "email": "noah.chen@sonbae.example"
+      },
+      {
+        "name": "Sofia Mendes",
+        "responsibility": "Wellbeing, safeguarding, and attendance support",
+        "email": "sofia.mendes@sonbae.example"
+      },
+      {
+        "name": "Iris Novak",
+        "responsibility": "Accounts, devices, and classroom systems",
+        "email": "iris.novak@sonbae.example"
+      }
+    ]
+  }
+]

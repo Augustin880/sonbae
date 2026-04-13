@@ -1,0 +1,118 @@
+[
+  {
+    "id": "humanities",
+    "sectorId": "learning",
+    "name": "Humanités",
+    "lead": "Mina Park",
+    "summary": "Histoire, littérature, sciences sociales et projets interdisciplinaires.",
+    "responsibilities": [
+      "Coordonner les progressions communes et les attentes de lecture.",
+      "Maintenir des grilles communes pour les essais, séminaires, analyses de sources et projets.",
+      "Soutenir la communication aux familles sur la lecture, les devoirs et l’évaluation."
+    ],
+    "contactPoints": [
+      {
+        "name": "Mina Park",
+        "role": "Responsable de département",
+        "email": "mina.park@sonbae.example"
+      },
+      {
+        "name": "Leo Martin",
+        "role": "Coordinateur évaluation",
+        "email": "leo.martin@sonbae.example"
+      }
+    ],
+    "priorities": [
+      "Calibration des grilles communes",
+      "Endurance de lecture",
+      "Évaluation par projet"
+    ],
+    "roleIds": ["humanities-teacher", "department-lead"]
+  },
+  {
+    "id": "stem",
+    "sectorId": "learning",
+    "name": "STEM",
+    "lead": "Jordan Lee",
+    "summary": "Mathématiques, sciences, technologie et conception appliquée.",
+    "responsibilities": [
+      "Animer des routines sûres pour les laboratoires, ateliers et activités robotique.",
+      "Maintenir des banques d’exercices et groupes d’intervention communs.",
+      "Coordonner le matériel, l’accès aux labos et les salles spécialisées."
+    ],
+    "contactPoints": [
+      {
+        "name": "Jordan Lee",
+        "role": "Responsable de département",
+        "email": "jordan.lee@sonbae.example"
+      },
+      {
+        "name": "Priya Nair",
+        "role": "Référent sécurité labo",
+        "email": "priya.nair@sonbae.example"
+      }
+    ],
+    "priorities": [
+      "Routines de sécurité labo",
+      "Résolution de problèmes guidée par les données",
+      "Parcours robotique"
+    ],
+    "roleIds": ["stem-teacher", "department-lead"]
+  },
+  {
+    "id": "wellbeing",
+    "sectorId": "student-support",
+    "name": "Wellbeing",
+    "lead": "Sofia Mendes",
+    "summary": "Accompagnement, inclusion, protection et conseil.",
+    "responsibilities": [
+      "Trier les demandes de soutien et les signalements de protection.",
+      "Coordonner le parcours d’accompagnement, le suivi présence et les contacts familles.",
+      "Maintenir des transmissions confidentielles entre enseignants, référents et direction."
+    ],
+    "contactPoints": [
+      {
+        "name": "Sofia Mendes",
+        "role": "Responsable bien-être",
+        "email": "sofia.mendes@sonbae.example"
+      },
+      {
+        "name": "Mateo Silva",
+        "role": "Directeur du support élèves",
+        "email": "mateo.silva@sonbae.example"
+      }
+    ],
+    "priorities": ["Tri des demandes", "Parcours d’accompagnement", "Actions présence"],
+    "roleIds": ["wellbeing-coordinator", "advisor"]
+  },
+  {
+    "id": "operations",
+    "sectorId": "operations",
+    "name": "Opérations scolaires",
+    "lead": "Noah Chen",
+    "summary": "Opérations quotidiennes, accueil équipe, calendriers et règles internes.",
+    "responsibilities": [
+      "Coordonner remplacements, réservations, calendriers et plans d’événements.",
+      "Maintenir guides internes, documents opérationnels et circuits de demande.",
+      "Soutenir l’accueil, les accès et les mises à jour transversales."
+    ],
+    "contactPoints": [
+      {
+        "name": "Noah Chen",
+        "role": "Responsable opérations",
+        "email": "noah.chen@sonbae.example"
+      },
+      {
+        "name": "Iris Novak",
+        "role": "Support systèmes",
+        "email": "iris.novak@sonbae.example"
+      }
+    ],
+    "priorities": [
+      "Couverture des remplacements",
+      "Guide nouveaux arrivants",
+      "Planification événements"
+    ],
+    "roleIds": ["operations-admin", "department-lead"]
+  }
+]

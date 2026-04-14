@@ -17,6 +17,13 @@ type StructureData = {
   summary: string;
 };
 
+const roleLevelLabel: Record<JobRole['level'], string> = {
+  admin: 'Administration',
+  coordinator: 'Coordination',
+  lead: 'Responsable',
+  teacher: 'Enseignement',
+};
+
 function getInitials(value: string) {
   return value
     .split(' ')
@@ -47,10 +54,10 @@ export function StructurePage() {
       return {
         departments,
         roles,
-        lastUpdated: section?.lastUpdated ?? 'Not available',
+        lastUpdated: section?.lastUpdated ?? 'Indisponible',
         summary:
           section?.summary ??
-          'The organisation is grouped into teaching departments and operational support functions.',
+          'L’organisation regroupe des départements pédagogiques et des fonctions de support opérationnel.',
       };
     }, [contentRepository]),
   );
@@ -136,7 +143,7 @@ function StructureContent({
             <CardHeader
               eyebrow="Organigramme interactif"
               title="Direction et départements"
-              description="Select a department to view its lead, priorities, and role coverage."
+              description="Sélectionnez un département pour consulter son responsable, ses priorités et ses rôles."
             />
             <Badge tone="info">Clavier : flèches, début, fin</Badge>
           </div>
@@ -149,7 +156,7 @@ function StructureContent({
                 </div>
                 <h2 className="mt-4 text-xl font-black text-ink">Direction</h2>
                 <p className="mt-2 text-sm leading-6 text-ink-muted">
-                  Principal, directors, and cross-functional decision owners.
+                  Direction générale, directions et responsables des décisions transversales.
                 </p>
               </div>
 
@@ -157,7 +164,7 @@ function StructureContent({
               <div className="h-px bg-line" aria-hidden="true" />
 
               <div
-                aria-label="Departments"
+                aria-label="Départements"
                 className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4"
                 role="list"
               >
@@ -195,14 +202,14 @@ function StructureContent({
                         {department.name}
                       </h3>
                       <p className="mt-2 text-sm font-semibold text-ink-muted">
-                        Lead: {department.lead}
+                        Responsable : {department.lead}
                       </p>
                       <p className="mt-4 line-clamp-3 text-sm leading-6 text-ink-muted">
                         {department.summary}
                       </p>
                       <div className="mt-5 flex flex-wrap gap-2">
-                        <Badge tone="brand">{roles.length} roles</Badge>
-                        <Badge tone="signal">{department.priorities.length} priorities</Badge>
+                        <Badge tone="brand">{roles.length} rôles</Badge>
+                        <Badge tone="signal">{department.priorities.length} priorités</Badge>
                       </div>
                     </button>
                   );
@@ -212,7 +219,7 @@ function StructureContent({
           ) : (
             <div className="mt-8">
               <EmptyState
-                description="Add departments to the content repository to populate the structure chart."
+                description="Ajoutez des départements au dépôt de contenu pour alimenter l’organigramme."
                 title="Aucun département disponible"
               />
             </div>
@@ -268,7 +275,7 @@ function DepartmentDrawer({
       role="dialog"
     >
       <button
-        aria-label="Fermer department details"
+        aria-label="Fermer les détails du département"
         className="absolute inset-0 bg-ink/45"
         onClick={onClose}
         type="button"
@@ -283,7 +290,9 @@ function DepartmentDrawer({
               <h2 className="mt-4 text-2xl font-black text-ink" id="department-drawer-title">
                 {department.name}
               </h2>
-              <p className="mt-2 text-sm font-semibold text-ink-muted">Lead: {department.lead}</p>
+              <p className="mt-2 text-sm font-semibold text-ink-muted">
+                Responsable : {department.lead}
+              </p>
             </div>
             <Button onClick={onClose} size="sm" variant="ghost">
               Fermer
@@ -300,9 +309,7 @@ function DepartmentDrawer({
           </section>
 
           <section>
-            <h3 className="text-sm font-black uppercase tracking-[0.14em] text-brand">
-              Priorities
-            </h3>
+            <h3 className="text-sm font-black uppercase tracking-[0.14em] text-brand">Priorités</h3>
             <ul className="mt-3 grid gap-2">
               {department.priorities.map((priority) => (
                 <li
@@ -323,7 +330,7 @@ function DepartmentDrawer({
                   <article className="rounded-ui border border-line bg-canvas p-4" key={role.id}>
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <h4 className="font-black text-ink">{role.title}</h4>
-                      <Badge tone="brand">{role.level}</Badge>
+                      <Badge tone="brand">{roleLevelLabel[role.level]}</Badge>
                     </div>
                     <p className="mt-2 text-sm leading-6 text-ink-muted">{role.summary}</p>
                   </article>
@@ -331,7 +338,7 @@ function DepartmentDrawer({
               </div>
             ) : (
               <EmptyState
-                description="Role records can be attached to this department through the content repository."
+                description="Des fiches de rôle peuvent être associées à ce département via le dépôt de contenu."
                 title="Aucun rôle listé"
               />
             )}
@@ -343,7 +350,7 @@ function DepartmentDrawer({
             className="inline-flex min-h-11 w-full items-center justify-center rounded-ui bg-brand px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-dark"
             to={`/departments/${department.id}`}
           >
-            Go to Department page
+            Ouvrir la fiche du département
           </Link>
         </div>
       </aside>

@@ -16,6 +16,21 @@ const statusTone: Record<TimelineStep['status'], 'brand' | 'signal' | 'success'>
   planned: 'signal',
 };
 
+const statusLabel: Record<TimelineStep['status'], string> = {
+  active: 'Actif',
+  completed: 'Terminé',
+  planned: 'Planifié',
+};
+
+const resourceTypeLabel: Record<SectionContent['resources'][number]['type'], string> = {
+  contact: 'Contact',
+  document: 'Document',
+  metric: 'Indicateur',
+  policy: 'Politique',
+  process: 'Processus',
+  system: 'Système',
+};
+
 function findBlockForStep(blocks: ContentBlock[], step: TimelineStep) {
   return blocks.find((block) => block.heading.toLowerCase() === step.label.toLowerCase());
 }
@@ -35,7 +50,7 @@ export function ProcessesPage() {
         if (!content) {
           return (
             <PageShell
-              description="The process content is not available in the repository."
+              description="Le contenu du processus n’est pas disponible dans le dépôt."
               eyebrow="Opérations"
               title="Processus et évolutions"
             >
@@ -64,7 +79,7 @@ function ProcessesContent({ content }: { content: SectionContent }) {
       content.resources.map((resource) => ({
         label: resource.title,
         value: resource.description,
-        meta: `${resource.owner} - ${resource.type}`,
+        meta: `${resource.owner} - ${resourceTypeLabel[resource.type]}`,
       })),
     [content.resources],
   );
@@ -87,7 +102,7 @@ function ProcessesContent({ content }: { content: SectionContent }) {
             <CardHeader
               eyebrow="Cycle de vie"
               title="Frise du processus"
-              description="Select a stage to review purpose, responsibilities, and next actions."
+              description="Sélectionnez une étape pour consulter l’objectif, les responsabilités et les prochaines actions."
             />
 
             <div className="mt-8 overflow-x-auto pb-2">
@@ -115,7 +130,7 @@ function ProcessesContent({ content }: { content: SectionContent }) {
                           {step.label}
                         </span>
                         <span className="mt-3">
-                          <Badge tone={statusTone[step.status]}>{step.status}</Badge>
+                          <Badge tone={statusTone[step.status]}>{statusLabel[step.status]}</Badge>
                         </span>
                       </button>
                     </li>
@@ -134,7 +149,9 @@ function ProcessesContent({ content }: { content: SectionContent }) {
                     title={selectedStep.label}
                     description={selectedStep.description}
                   />
-                  <Badge tone={statusTone[selectedStep.status]}>{selectedStep.status}</Badge>
+                  <Badge tone={statusTone[selectedStep.status]}>
+                    {statusLabel[selectedStep.status]}
+                  </Badge>
                 </div>
 
                 {selectedBlock ? (
@@ -161,14 +178,14 @@ function ProcessesContent({ content }: { content: SectionContent }) {
                 <CardHeader
                   eyebrow="Contenu du dépôt"
                   title="Ressources"
-                  description="Reference materials and owners for process updates."
+                  description="Supports de référence et responsables des mises à jour de processus."
                 />
                 <div className="mt-6">
                   {resourceItems.length > 0 ? (
                     <DataList items={resourceItems} />
                   ) : (
                     <EmptyState
-                      description="Attach process templates or guides in repository content."
+                      description="Associez des modèles ou guides de processus dans le contenu du dépôt."
                       title="Aucune ressource associée"
                     />
                   )}

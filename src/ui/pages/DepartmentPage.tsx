@@ -19,6 +19,24 @@ type DepartmentPageData = {
   documents: IntranetDocument[];
 };
 
+const roleLevelLabel: Record<JobRole['level'], string> = {
+  admin: 'Administration',
+  coordinator: 'Coordination',
+  lead: 'Responsable',
+  teacher: 'Enseignement',
+};
+
+const documentCategoryLabel: Record<IntranetDocument['category'], string> = {
+  calendar: 'Calendrier',
+  charter: 'Charte',
+  guide: 'Guide',
+  institutional: 'Institutionnel',
+  label: 'Label',
+  legal: 'Juridique',
+  policy: 'Politique',
+  template: 'Modèle',
+};
+
 export function DepartmentPage() {
   const { departmentId } = useParams();
   const { contentRepository } = useAppServices();
@@ -46,12 +64,12 @@ export function DepartmentPage() {
         if (!result) {
           return (
             <PageShell
-              description="The requested department is not available in the repository content."
+              description="Le département demandé n’est pas disponible dans le contenu du dépôt."
               eyebrow="Introuvable"
               title="Département introuvable"
             >
               <EmptyState
-                description="Return to the org chart and choose a listed department."
+                description="Revenez à l’organigramme et choisissez un département listé."
                 title="Aucune fiche département"
               />
             </PageShell>
@@ -90,7 +108,7 @@ function DepartmentDetail({ data }: { data: DepartmentPageData }) {
             <CardHeader
               eyebrow="Vue du département"
               title="Responsabilités"
-              description="Core responsibilities loaded from the content repository."
+              description="Responsabilités principales chargées depuis le dépôt de contenu."
             />
             <ul className="mt-6 grid gap-3">
               {data.department.responsibilities.map((responsibility) => (
@@ -108,7 +126,7 @@ function DepartmentDetail({ data }: { data: DepartmentPageData }) {
             <CardHeader
               eyebrow="Points de contact"
               title="Qui contacter"
-              description="Use these contacts for department-specific questions and escalation."
+              description="Utilisez ces contacts pour les questions et escalades propres au département."
             />
             <div className="mt-6">
               <DataList
@@ -129,7 +147,7 @@ function DepartmentDetail({ data }: { data: DepartmentPageData }) {
               title="Rôles dans ce département"
               description="Ouvrir un rôle pour consulter sa présentation, ses missions et ses ressources."
             />
-            <Badge tone="brand">{data.roles.length} roles</Badge>
+            <Badge tone="brand">{data.roles.length} rôles</Badge>
           </div>
 
           {data.roles.length > 0 ? (
@@ -149,7 +167,7 @@ function DepartmentDetail({ data }: { data: DepartmentPageData }) {
                         .join('')
                         .slice(0, 2)}
                     </div>
-                    <Badge tone="info">{role.level}</Badge>
+                    <Badge tone="info">{roleLevelLabel[role.level]}</Badge>
                   </div>
                   <h2 className="mt-5 text-xl font-black text-ink group-hover:text-brand-dark">
                     {role.title}
@@ -164,7 +182,7 @@ function DepartmentDetail({ data }: { data: DepartmentPageData }) {
           ) : (
             <div className="mt-6">
               <EmptyState
-                description="Attach roles to this department in the repository content to populate this area."
+                description="Associez des rôles à ce département dans le contenu du dépôt pour alimenter cette zone."
                 title="Aucun rôle dans ce département"
               />
             </div>
@@ -226,7 +244,7 @@ function RoleDrawer({
             <p className="leading-7 text-ink-muted">{role.summary}</p>
             <DataList
               items={[
-                { label: 'Level', value: role.level },
+                { label: 'Niveau', value: roleLevelLabel[role.level] },
                 { label: 'Identifiant département', value: role.departmentId },
                 { label: 'Outils', value: role.tools.join(', ') || 'Aucun outil listé' },
               ]}
@@ -259,7 +277,7 @@ function RoleDrawer({
               <article className="rounded-ui border border-line bg-canvas p-4" key={document.id}>
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <h3 className="font-black text-ink">{document.title}</h3>
-                  <Badge tone="brand">{document.category}</Badge>
+                  <Badge tone="brand">{documentCategoryLabel[document.category]}</Badge>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-ink-muted">{document.summary}</p>
                 <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-ink-subtle">
@@ -290,7 +308,7 @@ function RoleDrawer({
       role="dialog"
     >
       <button
-        aria-label="Fermer role details"
+        aria-label="Fermer les détails du rôle"
         className="absolute inset-0 bg-ink/45"
         onClick={onClose}
         type="button"
@@ -299,7 +317,7 @@ function RoleDrawer({
         <div className="border-b border-line p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <Badge tone="info">{role.level}</Badge>
+              <Badge tone="info">{roleLevelLabel[role.level]}</Badge>
               <h2 className="mt-3 text-2xl font-black text-ink" id="role-drawer-title">
                 {role.title}
               </h2>

@@ -1,7 +1,7 @@
 [
   {
     "id": "learning",
-    "name": "Learning",
+    "name": "Apprentissage",
     "summary": "Programme, pratiques de classe, évaluation et progression des élèves.",
     "departmentIds": ["humanities", "stem"]
   },

@@ -2,13 +2,13 @@
   {
     "id": "principal",
     "label": "Eun Seo",
-    "role": "Principal",
+    "role": "Direction générale",
     "reportsTo": null
   },
   {
     "id": "learning-director",
     "label": "Harper Singh",
-    "role": "Director of Learning",
+    "role": "Direction de l’apprentissage",
     "reportsTo": "principal"
   },
   {

@@ -5,6 +5,17 @@ import { AsyncBoundary } from '@/ui/components/AsyncBoundary';
 import { PageHeader } from '@/ui/components/PageHeader';
 import { useAsync } from '@/ui/hooks/useAsync';
 
+const documentCategoryLabel = {
+  calendar: 'Calendrier',
+  charter: 'Charte',
+  guide: 'Guide',
+  institutional: 'Institutionnel',
+  label: 'Label',
+  legal: 'Juridique',
+  policy: 'Politique',
+  template: 'Modèle',
+};
+
 export function DocumentsPage() {
   const { contentRepository } = useAppServices();
   const state = useAsync(
@@ -18,8 +29,8 @@ export function DocumentsPage() {
     <div className="space-y-8">
       <PageHeader
         eyebrow="Documents"
-        title="Policies, templates, guides, and calendars."
-        description="Use the static library now; replace the repository with API-backed search, permissions, and uploads later."
+        title="Politiques, modèles, guides et calendriers."
+        description="Utilisez la bibliothèque statique pour consulter les documents de référence."
       />
 
       <AsyncBoundary state={state}>
@@ -29,12 +40,12 @@ export function DocumentsPage() {
               <article key={document.id} className="grid gap-4 p-6 md:grid-cols-[1fr_auto]">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.14em] text-forest">
-                    {document.category}
+                    {documentCategoryLabel[document.category]}
                   </p>
                   <h2 className="mt-2 text-2xl font-bold text-ink">{document.title}</h2>
                   <p className="mt-2 leading-7 text-ink/70">{document.summary}</p>
                   <p className="mt-3 text-sm text-ink/60">
-                    {document.owner} updated {document.updatedAt}
+                    {document.owner} - Mis à jour {document.updatedAt}
                   </p>
                 </div>
                 <a

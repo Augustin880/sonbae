@@ -1,3 +1,3 @@
-# Welcome to Sonbae
+# Bienvenue sur Sonbae
 
-Use this demo content area for staff announcements, policies, onboarding notes, and department playbooks.
+Utilisez cette zone de contenu de démonstration pour les annonces d’équipe, les politiques, les notes d’accueil et les guides des départements.

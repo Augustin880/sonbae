@@ -37,6 +37,32 @@ const timelineTone: Record<TimelineStep['status'], 'success' | 'brand' | 'signal
   planned: 'signal',
 };
 
+const documentCategoryLabel: Record<DocumentCategory, string> = {
+  calendar: 'Calendrier',
+  charter: 'Charte',
+  guide: 'Guide',
+  institutional: 'Institutionnel',
+  label: 'Label',
+  legal: 'Juridique',
+  policy: 'Politique',
+  template: 'Modèle',
+};
+
+const resourceTypeLabel: Record<ContentResource['type'], string> = {
+  contact: 'Contact',
+  document: 'Document',
+  metric: 'Indicateur',
+  policy: 'Politique',
+  process: 'Processus',
+  system: 'Système',
+};
+
+const timelineStatusLabel: Record<TimelineStep['status'], string> = {
+  active: 'Actif',
+  completed: 'Terminé',
+  planned: 'Planifié',
+};
+
 export function IntranetSectionPage({ path, category }: SectionPageProps) {
   const { contentRepository } = useAppServices();
   const item = getNavigationItem(path);
@@ -158,7 +184,7 @@ function DocumentsExperience({
                   <option value="all">Tous les types</option>
                   {categories.map((documentCategory) => (
                     <option key={documentCategory} value={documentCategory}>
-                      {documentCategory}
+                      {documentCategoryLabel[documentCategory]}
                     </option>
                   ))}
                 </select>
@@ -175,7 +201,7 @@ function DocumentsExperience({
             {filteredDocuments.map((document) => (
               <Card as="article" className="flex min-h-72 flex-col" key={document.id}>
                 <div className="flex items-start justify-between gap-3">
-                  <Badge tone="brand">{document.category}</Badge>
+                  <Badge tone="brand">{documentCategoryLabel[document.category]}</Badge>
                   <Badge tone={document.linkType === 'external' ? 'info' : 'neutral'}>
                     {document.linkType === 'external' ? 'Externe' : 'PDF'}
                   </Badge>
@@ -227,8 +253,8 @@ function SectionContentView({ category, content }: { category: string; content: 
             <Card as="section">
               <CardHeader
                 eyebrow={category}
-                title="Working content"
-                description="Publié demo content loaded through the repository boundary."
+                title="Contenu publié"
+                description="Contenu de démonstration chargé depuis le dépôt."
               />
               <div className="mt-6 space-y-5">
                 {content.blocks.map((block) => (
@@ -258,7 +284,7 @@ function SectionContentView({ category, content }: { category: string; content: 
             <Card as="aside">
               <CardHeader
                 title="Statut du contenu"
-                description="Repository metadata for this section."
+                description="Métadonnées du dépôt pour cette rubrique."
               />
               <div className="mt-6 flex flex-wrap gap-2">
                 <Badge tone="success">Publié</Badge>
@@ -271,11 +297,11 @@ function SectionContentView({ category, content }: { category: string; content: 
                     {
                       label: 'Dernière mise à jour',
                       value: content.lastUpdated,
-                      meta: 'Shown from JSON content',
+                      meta: 'Affiché depuis le contenu JSON',
                     },
                     { label: 'Ressources', value: content.resources.length },
                     { label: 'Points de contact', value: content.contacts?.length ?? 0 },
-                    { label: 'Frise steps', value: content.timeline?.length ?? 0 },
+                    { label: 'Étapes de frise', value: content.timeline?.length ?? 0 },
                   ]}
                 />
               </div>
@@ -309,7 +335,9 @@ function SectionContentView({ category, content }: { category: string; content: 
                     >
                       <div className="flex items-start justify-between gap-3">
                         <h2 className="font-bold text-ink">{resource.title}</h2>
-                        <Badge tone={resourceTone[resource.type]}>{resource.type}</Badge>
+                        <Badge tone={resourceTone[resource.type]}>
+                          {resourceTypeLabel[resource.type]}
+                        </Badge>
                       </div>
                       <p className="mt-3 text-sm leading-6 text-ink-muted">
                         {resource.description}
@@ -322,7 +350,7 @@ function SectionContentView({ category, content }: { category: string; content: 
                 </div>
               ) : (
                 <EmptyState
-                  description="This section is intentionally reserved for future documents or linked systems."
+                  description="Cette rubrique est réservée aux futurs documents ou systèmes liés."
                   title="Aucune ressource publiée"
                 />
               )}
@@ -332,13 +360,13 @@ function SectionContentView({ category, content }: { category: string; content: 
       },
       {
         id: 'activity',
-        label: 'Activity',
+        label: 'Activité',
         content: (
           <div className="grid gap-6 xl:grid-cols-[1fr_0.8fr]">
             <Card as="section">
               <CardHeader
                 title="Frise"
-                description="Current process stage or planned content evolution."
+                description="Étape de processus en cours ou évolution de contenu planifiée."
               />
               <div className="mt-6 space-y-3">
                 {content.timeline && content.timeline.length > 0 ? (
@@ -346,14 +374,16 @@ function SectionContentView({ category, content }: { category: string; content: 
                     <div className="rounded-ui border border-line bg-canvas p-4" key={step.label}>
                       <div className="flex flex-wrap items-center justify-between gap-3">
                         <p className="font-bold text-ink">{step.label}</p>
-                        <Badge tone={timelineTone[step.status]}>{step.status}</Badge>
+                        <Badge tone={timelineTone[step.status]}>
+                          {timelineStatusLabel[step.status]}
+                        </Badge>
                       </div>
                       <p className="mt-2 text-sm leading-6 text-ink-muted">{step.description}</p>
                     </div>
                   ))
                 ) : (
                   <EmptyState
-                    description="Frise steps can be added to the content JSON when this page tracks a process."
+                    description="Des étapes de frise peuvent être ajoutées au contenu JSON lorsque cette page suit un processus."
                     title="Aucune frise pour cette rubrique"
                   />
                 )}
@@ -363,7 +393,7 @@ function SectionContentView({ category, content }: { category: string; content: 
             <Card as="aside">
               <CardHeader
                 title="Contacts et KPI"
-                description="Named responsibilities and measurement placeholders."
+                description="Responsabilités nommées et indicateurs de mesure."
               />
               <div className="mt-6 space-y-6">
                 {content.contacts && content.contacts.length > 0 ? (

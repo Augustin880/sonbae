@@ -49,9 +49,9 @@
     ],
     "links": [
       {
-        "label": "KPI definitions",
+        "label": "Définitions des KPI",
         "href": "https://example.com/sonbae/kpi-definitions",
-        "description": "Definitions for source systems, reporting windows, thresholds, and review owners."
+        "description": "Définitions des systèmes sources, fenêtres de reporting, seuils et responsables de revue."
       }
     ],
     "kpis": [
@@ -69,7 +69,7 @@
       },
       {
         "label": "Réponse opérations",
-        "value": "1.6 days",
+        "value": "1,6 jour",
         "trend": "stable",
         "description": "Délai médian de première réponse aux demandes internes."
       },
@@ -96,14 +96,14 @@
       {
         "label": "Hypothèses de planification",
         "href": "https://example.com/sonbae/planning-assumptions",
-        "description": "Baseline assumptions used for staffing, groups, and revenue estimates."
+        "description": "Hypothèses de base utilisées pour les effectifs, les groupes et les estimations de revenus."
       }
     ],
     "calculator": {
       "currency": "EUR",
       "fields": {
         "memberCount": {
-          "label": "Members",
+          "label": "Membres",
           "helper": "Nombre total de membres inscrits pour le mois.",
           "defaultValue": 180,
           "min": 0,

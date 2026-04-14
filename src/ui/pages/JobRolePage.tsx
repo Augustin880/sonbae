@@ -6,6 +6,13 @@ import { AsyncBoundary } from '@/ui/components/AsyncBoundary';
 import { PageHeader } from '@/ui/components/PageHeader';
 import { useAsync } from '@/ui/hooks/useAsync';
 
+const roleLevelLabel = {
+  admin: 'Administration',
+  coordinator: 'Coordination',
+  lead: 'Responsable',
+  teacher: 'Enseignement',
+};
+
 export function JobRolePage() {
   const { roleId } = useParams();
   const { contentRepository } = useAppServices();
@@ -24,14 +31,18 @@ export function JobRolePage() {
             <PageHeader
               eyebrow="Introuvable"
               title="Rôle introuvable."
-              description="The requested staff role is not available in the demo content."
+              description="Le rôle demandé n’est pas disponible dans le contenu de démo."
             />
           );
         }
 
         return (
           <div className="space-y-8">
-            <PageHeader eyebrow={role.level} title={role.title} description={role.summary} />
+            <PageHeader
+              eyebrow={roleLevelLabel[role.level]}
+              title={role.title}
+              description={role.summary}
+            />
 
             <section className="grid gap-6 lg:grid-cols-3">
               <div className="rounded border border-ink/10 bg-white p-6 lg:col-span-2">

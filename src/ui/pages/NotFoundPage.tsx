@@ -6,11 +6,11 @@ export function NotFoundPage() {
     <div className="space-y-6">
       <PageHeader
         eyebrow="404"
-        title="Page not found."
-        description="The intranet page you requested is not available in this demo."
+        title="Page introuvable."
+        description="La page intranet demandée n’est pas disponible dans cette démo."
       />
       <Link className="inline-block rounded bg-ink px-5 py-3 font-semibold text-white" to="/">
-        Return to overview
+        Retour au tableau de bord
       </Link>
     </div>
   );

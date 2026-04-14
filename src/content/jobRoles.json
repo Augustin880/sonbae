@@ -2,74 +2,78 @@
   {
     "id": "humanities-teacher",
     "departmentId": "humanities",
-    "title": "Humanités Teacher",
+    "title": "Enseignant en humanités",
     "level": "teacher",
-    "summary": "Plans and teaches humanities courses with shared assessment expectations.",
+    "summary": "Planifie et enseigne les cours d’humanités avec des attentes d’évaluation communes.",
     "responsibilities": [
-      "Plan aligned units",
-      "Give common feedback cycles",
-      "Document family contact"
+      "Planifier des séquences alignées",
+      "Assurer des cycles de feedback communs",
+      "Documenter les contacts avec les familles"
     ],
-    "tools": ["Canvas", "Turnitin", "Library catalogue"]
+    "tools": ["Canvas", "Turnitin", "Catalogue de bibliothèque"]
   },
   {
     "id": "stem-teacher",
     "departmentId": "stem",
-    "title": "STEM Teacher",
+    "title": "Enseignant STEM",
     "level": "teacher",
-    "summary": "Teaches mathematics, science, or design courses with safe practical routines.",
+    "summary": "Enseigne les mathématiques, les sciences ou la conception avec des routines pratiques sécurisées.",
     "responsibilities": [
-      "Maintain lab norms",
-      "Use shared problem banks",
-      "Track intervention groups"
+      "Maintenir les règles de laboratoire",
+      "Utiliser des banques d’exercices partagées",
+      "Suivre les groupes d’intervention"
     ],
-    "tools": ["Desmos", "Vernier", "Robotics kits"]
+    "tools": ["Desmos", "Vernier", "Kits de robotique"]
   },
   {
     "id": "department-lead",
     "departmentId": "operations",
     "title": "Responsable de département",
     "level": "lead",
-    "summary": "Coordinates curriculum quality, teacher support, and department operations.",
-    "responsibilities": ["Run team meetings", "Approve shared documents", "Coach new teachers"],
-    "tools": ["Shared drive", "Intranet admin", "Observation tracker"]
+    "summary": "Coordonne la qualité pédagogique, le soutien aux enseignants et les opérations du département.",
+    "responsibilities": [
+      "Animer les réunions d’équipe",
+      "Valider les documents partagés",
+      "Accompagner les nouveaux enseignants"
+    ],
+    "tools": ["Drive partagé", "Administration intranet", "Suivi des observations"]
   },
   {
     "id": "wellbeing-coordinator",
     "departmentId": "wellbeing",
-    "title": "Wellbeing Coordinator",
+    "title": "Coordinateur bien-être",
     "level": "coordinator",
-    "summary": "Coordinates student support referrals and safeguarding follow-up.",
+    "summary": "Coordonne les demandes de soutien élèves et le suivi de protection.",
     "responsibilities": [
-      "Review support requests",
-      "Coordinate case meetings",
-      "Maintain confidentiality"
+      "Examiner les demandes de soutien",
+      "Coordonner les réunions de suivi",
+      "Maintenir la confidentialité"
     ],
-    "tools": ["Safeguarding log", "Referral board", "Attendance dashboard"]
+    "tools": ["Registre de protection", "Tableau des signalements", "Tableau de bord des présences"]
   },
   {
     "id": "advisor",
     "departmentId": "wellbeing",
-    "title": "Advisor",
+    "title": "Référent d’accompagnement",
     "level": "teacher",
-    "summary": "Guides advisory groups and monitors student wellbeing signals.",
+    "summary": "Anime les groupes d’accompagnement et suit les signaux de bien-être des élèves.",
     "responsibilities": [
       "Animer les blocs d’accompagnement",
       "Faire le point avec les familles",
       "Escalader les préoccupations"
     ],
-    "tools": ["Advisory slides", "Family notes", "Attendance dashboard"]
+    "tools": ["Supports d’accompagnement", "Notes familles", "Tableau de bord des présences"]
   },
   {
     "id": "operations-admin",
     "departmentId": "operations",
-    "title": "Opérations Administrator",
+    "title": "Administrateur des opérations",
     "level": "admin",
-    "summary": "Maintains internal processes, schedules, and staff-facing operations resources.",
+    "summary": "Maintient les processus internes, les calendriers et les ressources opérationnelles de l’équipe.",
     "responsibilities": [
-      "Publish calendar updates",
-      "Manage room bookings",
-      "Maintain staff handbooks"
+      "Publier les mises à jour du calendrier",
+      "Gérer les réservations de salles",
+      "Maintenir les guides d’équipe"
     ],
     "tools": ["Calendrier", "Guichet logistique", "Bibliothèque documentaire"]
   }

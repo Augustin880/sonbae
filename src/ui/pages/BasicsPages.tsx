@@ -15,7 +15,7 @@ type BasicsPageProps = {
   kind: 'operations' | 'kpis' | 'calculator';
 };
 
-const currencyFormatter = new Intl.NumberFormat('en', {
+const currencyFormatter = new Intl.NumberFormat('fr-BE', {
   currency: 'EUR',
   maximumFractionDigits: 0,
   style: 'currency',
@@ -35,7 +35,7 @@ export function BasicsPage({ path, kind }: BasicsPageProps) {
             <PageShell
               description="La page demandée n’est pas disponible dans le dépôt."
               eyebrow="Bases"
-              title="Bases content unavailable"
+              title="Contenu de base indisponible"
             >
               <EmptyState
                 description="Ajoutez une entrée correspondante dans basicsContent.json pour alimenter cette page."
@@ -139,7 +139,7 @@ function NumbersKpisPage({ content }: { content: BasicsPageContent }) {
         {content.kpis && content.kpis.length > 0 ? (
           <section
             className="grid gap-4 md:grid-cols-2 xl:grid-cols-4"
-            aria-label="KPI placeholders"
+            aria-label="Indicateurs KPI de démonstration"
           >
             {content.kpis.map((kpi) => (
               <Card as="article" className="min-h-56" key={kpi.label}>
@@ -163,7 +163,7 @@ function NumbersKpisPage({ content }: { content: BasicsPageContent }) {
         <Card as="section">
           <CardHeader
             title="Définitions et références"
-            description="Liens loaded from repository content."
+            description="Liens chargés depuis le contenu du dépôt."
           />
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {content.links.map((link) => (
@@ -231,7 +231,7 @@ function CalculatorPage({ content }: { content: BasicsPageContent }) {
             <CardHeader
               eyebrow="Estimation de revenus"
               title="Calculateur mensuel"
-              description="Constants, labels, ranges, and helper copy are loaded from repository content."
+              description="Les constantes, libellés, plages et aides sont chargés depuis le contenu du dépôt."
             />
             <div className="mt-6 grid gap-4">
               <NumberField
@@ -256,7 +256,7 @@ function CalculatorPage({ content }: { content: BasicsPageContent }) {
             <CardHeader
               eyebrow="Estimation"
               title="Résultats mensuels"
-              description="Pure domain logic calculates these values from the form inputs."
+              description="La logique métier calcule ces valeurs à partir des champs du formulaire."
             />
             <div className="mt-6 grid gap-4">
               <div className="rounded-ui bg-brand-soft p-5">
@@ -282,7 +282,7 @@ function CalculatorPage({ content }: { content: BasicsPageContent }) {
         </div>
       ) : (
         <EmptyState
-          description="Add calculator configuration to basicsContent.json to activate this form."
+          description="Ajoutez la configuration du calculateur dans basicsContent.json pour activer ce formulaire."
           title="Calculateur indisponible"
         />
       )}

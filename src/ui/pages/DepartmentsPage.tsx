@@ -14,9 +14,9 @@ export function DepartmentsPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        eyebrow="Departments"
-        title="Teams, leads, and current priorities."
-        description="Ouvrir a department to see its work focus and linked staff responsibilities."
+        eyebrow="Départements"
+        title="Équipes, responsables et priorités en cours."
+        description="Ouvrez un département pour consulter ses axes de travail et les responsabilités associées."
       />
 
       <AsyncBoundary state={state}>

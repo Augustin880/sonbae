@@ -49,7 +49,7 @@
     "category": "legal",
     "linkType": "pdf-placeholder",
     "sectionPaths": ["/understand/institutional-legal-docs"],
-    "owner": "Principal's Office",
+    "owner": "Bureau de la direction",
     "updatedAt": "2026-03-25",
     "href": "/documents/placeholders/staff-code-of-conduct.pdf",
     "summary": "Conduite professionnelle, limites, confidentialité, obligations de signalement et responsabilités du personnel."
@@ -82,7 +82,7 @@
     "category": "institutional",
     "linkType": "pdf-placeholder",
     "sectionPaths": ["/understand/institutional-legal-docs"],
-    "owner": "Principal's Office",
+    "owner": "Bureau de la direction",
     "updatedAt": "2026-02-26",
     "href": "/documents/placeholders/institutional-registration-record.pdf",
     "summary": "Fiche de référence pour l’identité institutionnelle, les enregistrements de gouvernance et les informations officielles."
@@ -115,7 +115,7 @@
     "category": "guide",
     "linkType": "pdf-placeholder",
     "sectionPaths": ["/documents", "/understand/institutional-legal-docs"],
-    "owner": "Wellbeing",
+    "owner": "Bien-être",
     "updatedAt": "2026-04-01",
     "href": "/documents/placeholders/safeguarding-guide.pdf",
     "summary": "Étapes immédiates pour consigner, signaler et escalader une préoccupation."

@@ -21,7 +21,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         </div>
       </div>
 
-      <nav aria-label="Primary navigation" className="min-h-0 flex-1 overflow-y-auto px-3 py-4">
+      <nav aria-label="Navigation principale" className="min-h-0 flex-1 overflow-y-auto px-3 py-4">
         <div className="space-y-6">
           {navigationGroups.map((group) => (
             <section key={group.label}>

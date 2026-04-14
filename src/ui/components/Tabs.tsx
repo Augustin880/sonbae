@@ -17,7 +17,7 @@ export function Tabs({ items, activeId, onChange }: TabsProps) {
 
   return (
     <div>
-      <div className="border-b border-line" role="tablist" aria-label="Page sections">
+      <div className="border-b border-line" role="tablist" aria-label="Sections de la page">
         <div className="flex gap-2 overflow-x-auto">
           {items.map((item) => (
             <button

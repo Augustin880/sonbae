@@ -104,8 +104,8 @@ export function DashboardPage() {
                   </h2>
                 </div>
                 <p className="max-w-2xl text-sm leading-6 text-ink-muted">
-                  Six essential pages for structure, responsibilities, standards, and institutional
-                  references.
+                  Six pages essentielles pour la structure, les responsabilités, les standards et
+                  les références institutionnelles.
                 </p>
               </div>
 
@@ -138,7 +138,7 @@ export function DashboardPage() {
                 </div>
               ) : (
                 <EmptyState
-                  description="Publish the six Comprendre le club entries in sectionContent.json to populate this area."
+                  description="Publiez les six entrées Comprendre le club dans sectionContent.json pour alimenter cette zone."
                   title="Aucun contenu de présentation"
                 />
               )}
@@ -167,7 +167,7 @@ export function DashboardPage() {
                     <div className="border-t border-brand/20 bg-surface p-6 lg:border-l lg:border-t-0">
                       <CardHeader
                         title="Points de contact"
-                        description="Use the right relay for cross-team blockers."
+                        description="Utilisez le bon relais pour débloquer les sujets entre équipes."
                       />
                       <div className="mt-5 space-y-3">
                         {(functionalRelays.contacts ?? []).slice(0, 2).map((contact) => (
@@ -222,7 +222,7 @@ export function DashboardPage() {
                           </span>
                           <span className="mt-2 text-sm leading-6 text-ink-muted">
                             {processes.timeline?.[index]?.description ??
-                              'Ouvrir the process page for details and ownership.'}
+                              'Ouvrez la page du processus pour consulter les détails et le responsable.'}
                           </span>
                         </Link>
                       </li>
@@ -264,7 +264,7 @@ export function DashboardPage() {
               ) : (
                 <EmptyState
                   description="Ajoutez les contenus Opérations et systèmes, Chiffres et KPI, et Calculateur au dépôt."
-                  title="Bases content unavailable"
+                  title="Contenu de base indisponible"
                 />
               )}
             </section>

@@ -26,6 +26,22 @@ describe('StaticContentRepository', () => {
     });
   });
 
+  it('returns demo calendar events with meetings and deadlines', async () => {
+    const repository = new StaticContentRepository();
+
+    const content = await repository.getSectionContent('/calendar');
+
+    expect(content?.calendarEvents).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ kind: 'meeting', title: 'Briefing de direction hebdomadaire' }),
+        expect.objectContaining({
+          kind: 'deadline',
+          title: 'Deadline - ajustements du calendrier d’évaluation',
+        }),
+      ]),
+    );
+  });
+
   it('returns safely parsed basics content by route path', async () => {
     const repository = new StaticContentRepository();
 

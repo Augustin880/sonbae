@@ -1,5 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
-import type { ContentResource, SectionContent, TimelineStep } from '@/domain/content';
+import type {
+  CalendarEvent,
+  ContentResource,
+  SectionContent,
+  TimelineStep,
+} from '@/domain/content';
 import type { DocumentCategory, IntranetDocument } from '@/domain/entities';
 import { useAppServices } from '@/services/AppProvider';
 import { AsyncBoundary } from '@/ui/components/AsyncBoundary';
@@ -63,6 +68,18 @@ const timelineStatusLabel: Record<TimelineStep['status'], string> = {
   planned: 'Planifié',
 };
 
+const calendarKindLabel: Record<CalendarEvent['kind'], string> = {
+  deadline: 'Deadline',
+  event: 'Événement',
+  meeting: 'Réunion',
+};
+
+const calendarKindTone: Record<CalendarEvent['kind'], 'accent' | 'brand' | 'signal'> = {
+  deadline: 'signal',
+  event: 'accent',
+  meeting: 'brand',
+};
+
 export function IntranetSectionPage({ path, category }: SectionPageProps) {
   const { contentRepository } = useAppServices();
   const item = getNavigationItem(path);
@@ -102,6 +119,10 @@ export function IntranetSectionPage({ path, category }: SectionPageProps) {
           return (
             <DocumentsExperience category={category} content={content} documents={documents} />
           );
+        }
+
+        if (path === '/calendar') {
+          return <CalendarExperience category={category} content={content} />;
         }
 
         return <SectionContentView category={category} content={content} />;
@@ -233,6 +254,149 @@ function DocumentsExperience({
               setSelectedCategory('all');
             }}
             title="Aucun document trouvé"
+          />
+        )}
+      </div>
+    </PageShell>
+  );
+}
+
+function formatCalendarDate(event: CalendarEvent) {
+  const formatter = new Intl.DateTimeFormat('fr-BE', {
+    day: 'numeric',
+    month: 'long',
+    weekday: 'long',
+  });
+  const start = formatter.format(new Date(event.date));
+
+  if (!event.endDate) {
+    return start;
+  }
+
+  return `${start} - ${formatter.format(new Date(event.endDate))}`;
+}
+
+function CalendarExperience({ category, content }: { category: string; content: SectionContent }) {
+  const [selectedKind, setSelectedKind] = useState<CalendarEvent['kind'] | 'all'>('all');
+  const events = useMemo(
+    () =>
+      [...(content.calendarEvents ?? [])].sort(
+        (left, right) => Date.parse(left.date) - Date.parse(right.date),
+      ),
+    [content.calendarEvents],
+  );
+  const filteredEvents = useMemo(
+    () => (selectedKind === 'all' ? events : events.filter((event) => event.kind === selectedKind)),
+    [events, selectedKind],
+  );
+  const eventCounts = useMemo(
+    () => ({
+      deadline: events.filter((event) => event.kind === 'deadline').length,
+      event: events.filter((event) => event.kind === 'event').length,
+      meeting: events.filter((event) => event.kind === 'meeting').length,
+    }),
+    [events],
+  );
+
+  return (
+    <PageShell
+      actions={
+        <>
+          <Button variant="secondary">Exporter le calendrier</Button>
+          <Button>Proposer une date</Button>
+        </>
+      }
+      description={content.summary}
+      eyebrow={`${category} - Mis à jour ${content.lastUpdated}`}
+      title={content.title}
+    >
+      <div className="space-y-6">
+        <Card as="section">
+          <div className="grid gap-6 xl:grid-cols-[1fr_0.7fr]">
+            <div>
+              <CardHeader
+                eyebrow="Exemple de trimestre"
+                title="Réunions, deadlines et temps forts"
+                description="Planning statique de démonstration pour visualiser les rendez-vous collectifs et les échéances opérationnelles."
+              />
+              <div className="mt-5 flex flex-wrap gap-2">
+                <Button
+                  onClick={() => setSelectedKind('all')}
+                  variant={selectedKind === 'all' ? 'primary' : 'secondary'}
+                >
+                  Tout
+                </Button>
+                {(['meeting', 'deadline', 'event'] as const).map((kind) => (
+                  <Button
+                    key={kind}
+                    onClick={() => setSelectedKind(kind)}
+                    variant={selectedKind === kind ? 'primary' : 'secondary'}
+                  >
+                    {calendarKindLabel[kind]}
+                  </Button>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              <div className="rounded-ui border border-line bg-canvas p-4">
+                <p className="text-2xl font-black text-ink">{eventCounts.meeting}</p>
+                <p className="mt-1 text-sm font-semibold text-ink-muted">Réunions</p>
+              </div>
+              <div className="rounded-ui border border-line bg-canvas p-4">
+                <p className="text-2xl font-black text-ink">{eventCounts.deadline}</p>
+                <p className="mt-1 text-sm font-semibold text-ink-muted">Deadlines</p>
+              </div>
+              <div className="rounded-ui border border-line bg-canvas p-4">
+                <p className="text-2xl font-black text-ink">{eventCounts.event}</p>
+                <p className="mt-1 text-sm font-semibold text-ink-muted">Événements</p>
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        {filteredEvents.length > 0 ? (
+          <section className="grid gap-4 lg:grid-cols-2" aria-label="Événements du calendrier">
+            {filteredEvents.map((event) => (
+              <Card
+                as="article"
+                className="flex min-h-64 flex-col"
+                key={`${event.date}-${event.title}`}
+              >
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <Badge tone={calendarKindTone[event.kind]}>{calendarKindLabel[event.kind]}</Badge>
+                  <p className="text-sm font-black text-brand-dark">{formatCalendarDate(event)}</p>
+                </div>
+                <h2 className="mt-5 text-xl font-black text-ink">{event.title}</h2>
+                <p className="mt-3 flex-1 text-sm leading-6 text-ink-muted">{event.description}</p>
+                <div className="mt-5 grid gap-3 border-t border-line pt-4 sm:grid-cols-2">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink-subtle">
+                      Horaire
+                    </p>
+                    <p className="mt-1 font-semibold text-ink">{event.time ?? 'À confirmer'}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink-subtle">
+                      Lieu
+                    </p>
+                    <p className="mt-1 font-semibold text-ink">{event.location ?? 'À confirmer'}</p>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink-subtle">
+                      Responsable
+                    </p>
+                    <p className="mt-1 font-semibold text-ink">{event.owner}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </section>
+        ) : (
+          <EmptyState
+            actionLabel="Afficher tout"
+            description="Aucun élément ne correspond au filtre sélectionné."
+            onAction={() => setSelectedKind('all')}
+            title="Aucune date à afficher"
           />
         )}
       </div>

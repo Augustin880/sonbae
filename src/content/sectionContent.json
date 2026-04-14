@@ -478,7 +478,7 @@
     "path": "/calendar",
     "title": "Calendrier",
     "summary": "Dates clés de l’équipe pour les réunions de département, périodes d’évaluation, échéances de reporting et événements scolaires.",
-    "lastUpdated": "2026-04-05",
+    "lastUpdated": "2026-04-14",
     "blocks": [
       {
         "heading": "Rythme à venir",
@@ -496,6 +496,63 @@
         "description": "Périodes d’évaluation, événements, échéances et journées de formation de l’équipe.",
         "owner": "Opérations scolaires",
         "type": "document"
+      }
+    ],
+    "calendarEvents": [
+      {
+        "title": "Briefing de direction hebdomadaire",
+        "date": "2026-04-20",
+        "time": "08:30-09:00",
+        "kind": "meeting",
+        "owner": "Bureau de la direction",
+        "location": "Salle conseil",
+        "description": "Alignement des priorités de la semaine, arbitrages rapides et points de vigilance élèves."
+      },
+      {
+        "title": "Deadline - ajustements du calendrier d’évaluation",
+        "date": "2026-04-24",
+        "time": "17:00",
+        "kind": "deadline",
+        "owner": "Responsables de département",
+        "location": "Dépôt intranet",
+        "description": "Validation finale des changements d’épreuves, de salles et de surveillances avant publication."
+      },
+      {
+        "title": "Réunion de calibration des évaluations",
+        "date": "2026-04-29",
+        "time": "14:00-15:30",
+        "kind": "meeting",
+        "owner": "Conseil pédagogique",
+        "location": "Atelier apprentissage",
+        "description": "Revue croisée des grilles communes et harmonisation des attentes avant la période d’évaluation."
+      },
+      {
+        "title": "Entretiens familles - cycle printemps",
+        "date": "2026-05-05",
+        "endDate": "2026-05-07",
+        "time": "16:30-19:00",
+        "kind": "event",
+        "owner": "Support élèves",
+        "location": "Salles de département",
+        "description": "Créneaux dédiés aux familles pour suivre les progrès, les besoins de soutien et les prochaines étapes."
+      },
+      {
+        "title": "Deadline - notes de progression T3",
+        "date": "2026-05-12",
+        "time": "12:00",
+        "kind": "deadline",
+        "owner": "Équipe enseignante",
+        "location": "Système de suivi élèves",
+        "description": "Saisie des notes, commentaires ciblés et signalement des situations nécessitant une revue de support."
+      },
+      {
+        "title": "Journée de formation équipe",
+        "date": "2026-05-18",
+        "time": "09:00-16:00",
+        "kind": "event",
+        "owner": "Opérations scolaires",
+        "location": "Campus principal",
+        "description": "Ateliers sur les routines de classe, la protection, les systèmes internes et la planification des événements."
       }
     ],
     "timeline": [

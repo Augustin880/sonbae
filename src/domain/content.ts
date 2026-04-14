@@ -20,6 +20,7 @@ const contentResourceTypes = [
   'policy',
 ] as const;
 const timelineStatuses = ['active', 'planned', 'completed'] as const;
+const calendarEventKinds = ['deadline', 'event', 'meeting'] as const;
 
 function isContentResourceType(value: string): value is ContentResource['type'] {
   return contentResourceTypes.some((type) => type === value);
@@ -29,9 +30,24 @@ function isTimelineStatus(value: string): value is TimelineStep['status'] {
   return timelineStatuses.some((status) => status === value);
 }
 
+function isCalendarEventKind(value: string): value is CalendarEvent['kind'] {
+  return calendarEventKinds.some((kind) => kind === value);
+}
+
 export type TimelineStep = {
   label: string;
   status: 'active' | 'planned' | 'completed';
+  description: string;
+};
+
+export type CalendarEvent = {
+  title: string;
+  date: string;
+  endDate?: string;
+  time?: string;
+  kind: 'deadline' | 'event' | 'meeting';
+  owner: string;
+  location?: string;
   description: string;
 };
 
@@ -49,6 +65,7 @@ export type SectionContent = {
   blocks: ContentBlock[];
   resources: ContentResource[];
   timeline?: TimelineStep[];
+  calendarEvents?: CalendarEvent[];
   contacts?: ContactPoint[];
   kpis?: ContentResource[];
 };
@@ -59,6 +76,20 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function readString(record: Record<string, unknown>, key: string, context: string) {
   const value = record[key];
+
+  if (typeof value !== 'string' || value.trim() === '') {
+    throw new Error(`Invalid content: ${context}.${key} must be a non-empty string.`);
+  }
+
+  return value;
+}
+
+function readOptionalString(record: Record<string, unknown>, key: string, context: string) {
+  const value = record[key];
+
+  if (value === undefined) {
+    return undefined;
+  }
 
   if (typeof value !== 'string' || value.trim() === '') {
     throw new Error(`Invalid content: ${context}.${key} must be a non-empty string.`);
@@ -140,6 +171,29 @@ function parseTimelineStep(value: unknown, index: number): TimelineStep {
   };
 }
 
+function parseCalendarEvent(value: unknown, index: number): CalendarEvent {
+  if (!isRecord(value)) {
+    throw new Error(`Invalid content: calendarEvents[${index}] must be an object.`);
+  }
+
+  const kind = readString(value, 'kind', `calendarEvents[${index}]`);
+
+  if (!isCalendarEventKind(kind)) {
+    throw new Error(`Invalid content: calendarEvents[${index}].kind has unsupported value.`);
+  }
+
+  return {
+    title: readString(value, 'title', `calendarEvents[${index}]`),
+    date: readString(value, 'date', `calendarEvents[${index}]`),
+    endDate: readOptionalString(value, 'endDate', `calendarEvents[${index}]`),
+    time: readOptionalString(value, 'time', `calendarEvents[${index}]`),
+    kind,
+    owner: readString(value, 'owner', `calendarEvents[${index}]`),
+    location: readOptionalString(value, 'location', `calendarEvents[${index}]`),
+    description: readString(value, 'description', `calendarEvents[${index}]`),
+  };
+}
+
 function parseContact(value: unknown, index: number): ContactPoint {
   if (!isRecord(value)) {
     throw new Error(`Invalid content: contacts[${index}] must be an object.`);
@@ -160,6 +214,7 @@ export function parseSectionContent(value: unknown): SectionContent {
   const blocks = value.blocks;
   const resources = value.resources;
   const timeline = value.timeline;
+  const calendarEvents = value.calendarEvents;
   const contacts = value.contacts;
   const kpis = value.kpis;
 
@@ -179,6 +234,9 @@ export function parseSectionContent(value: unknown): SectionContent {
     blocks: blocks.map(parseBlock),
     resources: resources.map((resource, index) => parseResource(resource, index)),
     timeline: Array.isArray(timeline) ? timeline.map(parseTimelineStep) : undefined,
+    calendarEvents: Array.isArray(calendarEvents)
+      ? calendarEvents.map(parseCalendarEvent)
+      : undefined,
     contacts: Array.isArray(contacts) ? contacts.map(parseContact) : undefined,
     kpis: Array.isArray(kpis)
       ? kpis.map((kpi, index) => parseResource(kpi, index, 'kpis'))
